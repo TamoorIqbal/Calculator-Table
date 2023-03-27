@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --background-color: #eaeaea;
+  --black-color: #22252d;
+  --black-light: #292d36;
+  --grey-color: #f9f9f9;
+  --white-color: #ffffff;
+  --primary-color: #26fcd5;
+  --secondary-color: #f38282;
+}
+
+body {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; */
+  background: var(--background-color);
+}
+.box {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 100vh;
+}
+.box1 > table {
+  width: 320px;
+  height: 560px;
+  border-radius: 24px;
+}
+.container {
+  width: 320px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  height: 560px;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  background: var(--black-color);
+  transition: all 0.3s;
+}
+.container.light {
+  background-color: var(--white-color);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* Styling Header Part */
+header nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4em 1em;
+  color: var(--grey-color);
+  transition: all 0.3s;
+}
+header nav.light,
+nav .time h1.light {
+  color: var(--black-light);
+}
+nav .time h1 {
+  color: var(--grey-color);
+  font-size: 0.9rem;
+  font-weight: 400;
+  transition: all 0.3s;
+}
+
+nav .navMenu {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+}
+nav .navMenu .item {
+  list-style: none;
+}
+nav .navMenu .item span {
+  font-size: 1.2rem;
+}
+nav .navMenu .item span.battery {
+  transform: rotate(90deg);
+  font-size: 1.5rem;
+  margin-top: 0.1em;
+}
+
+/* Styling Toggle Button */
+.toggleBtn {
+  display: flex;
+  justify-content: center;
+}
+.toggleBtn .modeBtn {
+  display: flex;
+  background: var(--black-light);
+  border-radius: 10px;
+  padding: 0.2em;
+  overflow: hidden;
+  color: var(--grey-color);
+  transition: all 0.3s;
+}
+.toggleBtn .modeBtn .modeIcon.active {
+  background: var(--black-color);
+  opacity: 1;
+}
+.toggleBtn .modeBtn .modeIcon {
+  padding: 0.3em 0.5em;
+  border-radius: 8px;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.toggleBtn .modeBtn.light {
+  color: var(--black-light);
+  background-color: var(--grey-color);
+}
+.toggleBtn .modeBtn .modeIcon.light.active {
+  background: var(--white-color);
+  opacity: 1;
+}
+
+.container .form {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.container .form .display > input {
+  width: 100%;
+  height: 80px;
+  margin: 1em 0;
+  padding: 0 0.5em;
+  outline: none;
+  border: none;
+  text-align: right;
+  color: var(--grey-color);
+  background: transparent;
+  pointer-events: none;
+  letter-spacing: 1px;
+  font-size: 1.4rem;
+  transition: all 0.3s;
+}
+.container .form .display > input.light {
+  color: var(--black-light);
+}
+.buttons {
+  padding: 2em 1em 1em;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(4, 1fr);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--black-light);
+  border-radius: 25px 25px 0 0;
+  transition: all 0.3s;
+}
+.buttons.light {
+  background-color: var(--grey-color);
+}
+.buttons .topBtns.light,
+.buttons .topBtns {
+  color: var(--primary-color);
+}
+.buttons > input {
+  height: 50px;
+  background-color: #272b33;
+  color: var(--grey-color);
+  font-size: 1rem;
+  border: none;
+  outline-color: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+}
+.buttons > input:hover {
+  background: var(--grey-color);
+  color: var(--black-light);
+}
+.buttons > input.light {
+  color: var(--black-color);
+  background-color: var(--white-color);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+.buttons > input.light:hover {
+  color: var(--grey-color);
+  background-color: var(--black-light);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.buttons > .operators.light,
+.buttons > .operators {
+  color: var(--secondary-color);
+  font-size: 1.6rem;
+}
+
+/*** Table Styles **/
+
+.table-fill {
+  background: white;
+  border-radius: 3px;
+  border-collapse: collapse;
+  height: 320px;
+  margin: auto;
+  max-width: 600px;
+  padding: 5px;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  animation: float 5s infinite;
+}
+
+th {
+  color: #d5dde5;
+  background: #1b1e24;
+  border-bottom: 4px solid #9ea7af;
+  /* border-right: 1px solid #343a45; */
+  /* font-size: 23px; */
+  font-weight: 100;
+  padding: 24px;
+  text-align: center;
+  width: 300px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align: middle;
+}
+tbody {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  height: 400px;
+}
+ thead tr {
+  display: block;
+}
+
+th:first-child {
+  border-top-left-radius: 24px;
+}
+
+th:last-child {
+  border-top-right-radius: 24px;
+  border-right: none;
+}
+
+tr {
+  border-top: 1px solid #c1c3d1;
+  border-bottom: 1px solid #c1c3d1;
+  color: #666b85;
+  font-size: 16px;
+  font-weight: normal;
+  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+
+tr:hover td {
+  background: #4e5066;
+  color: #ffffff;
+  border-top: 1px solid #22262e;
+}
+
+tr:first-child {
+  border-top: none;
+}
+
+tr:last-child {
+  border-bottom: none;
+}
+
+tr:nth-child(odd) td {
+  background: #ebebeb;
+}
+
+tr:nth-child(odd):hover td {
+  background: #4e5066;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius: 3px;
+}
+
+tr:last-child td:last-child {
+  border-bottom-right-radius: 3px;
+}
+
+td {
+  background: #ffffff;
+  padding: 20px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 300;
+  font-size: 18px;
+  width: 300px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #c1c3d1;
+}
+
+td:last-child {
+  border-right: 0px;
+}
+
+
+
+
+
+
+
+
+
